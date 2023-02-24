@@ -72,7 +72,6 @@ async function fetchInstagramEvents() {
 	let instagramOrganizers = await useStorage().getItem('instagramOrganizers');
 	const instagramJson = process.env.dev ? [eventSourcesJSON.instagram[0]] : eventSourcesJSON.instagram;
 
-	if (process.env.dev)
 	try {
 		instagramOrganizers = await Promise.all(
 			instagramJson.map(async (source) => {
@@ -146,7 +145,6 @@ async function fetchInstagramEvents() {
 						:
 						[event.media_url];
 					console.log('mediaLinks', mediaLinks);
-
 					const ocrResult = await doOCR(mediaLinks);
 					return {
 						...event,
