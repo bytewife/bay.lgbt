@@ -231,10 +231,10 @@ async function getEventSources() {
     '/api/events/wordpress-tribe',
     '/api/events/tockify',
     '/api/events/squarespace',
-    '/api/events/instagram',
-    // '/api/events/timely',
+    // '/api/events/instagram',
     '/api/events/with-friends',
     '/api/events/google-calendar',
+    // '/api/events/timely',
   ];
   const clientHeaders = {
     'Cache-Control': `max-age=${clientCacheMaxAgeSeconds}, stale-while-revalidate=${clientStaleWhileInvalidateSeconds}`,
