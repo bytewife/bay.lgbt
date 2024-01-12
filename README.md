@@ -32,6 +32,7 @@ yes!
 - *adds many various other APIs (Wix, Squarespace, With Friends, etc.)*- not too bad but fearful that APIs make change/break at any time, haha...
 - *adds a frightening number of event sources all around the bay*
 - *realize the potential endless API hell I've gotten myself into*- *takes a cold shower and puts up Donation link*
+- *Ivy politely asks [forbiddentickets.com](https://forbiddentickets.com/) to expose an events API, and they graciously agree ❤️*
 - someone [forked](https://github.com/NatVIII/rva.rip) bay.lgbt for their city and I'm excited and a little nervous
 - *Ivy hibernates for a few months*
 - Nuxt (the JS framework) updated from version 2 to 3? I'll deal with this later, haha
