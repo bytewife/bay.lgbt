@@ -1,3 +1,6 @@
+# looking for co-maintainers 😇
+if you'd like to help maintain bay.lgbt, please shoot me an email! I am actively looking for co-maintainers due to being short on time as of late. I'm looking for people who can implement features, fix bugs, and/or keep the list of event organizers up-to-date and curated! The latter doesn't require any coding experience.
+
 # bay.lgbt
 an lgbt events aggregator for the SF bay!  
 yes!
@@ -29,6 +32,11 @@ yes!
 - *adds many various other APIs (Wix, Squarespace, With Friends, etc.)*- not too bad but fearful that APIs make change/break at any time, haha...
 - *adds a frightening number of event sources all around the bay*
 - *realize the potential endless API hell I've gotten myself into*- *takes a cold shower and puts up Donation link*
+- someone [forked](https://github.com/NatVIII/rva.rip) bay.lgbt for their city and I'm excited and a little nervous
+- *Ivy hibernates for a few months*
+- Nuxt (the JS framework) updated from version 2 to 3? I'll deal with this later, haha
+- *Ivy hibernates for a few months*
+- wow, web dev is pain (*puts up ad for co-maintainers*)
 
 # Development
 TODO
@@ -37,5 +45,5 @@ TODO
 Donations to keep bay.lgbt running are appreciated! Transparently, here are the costs to maintain the site:
 - Domain: $7.5/mo
 - Verce1: $20/mo
-- OpenAI: ~$10/mo
+- OpenAI: ~$2/mo
 - Google Vision OCR: ~$5/mo
