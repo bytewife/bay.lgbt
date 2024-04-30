@@ -25,8 +25,8 @@ model InstagramEventOrganizer {
 model InstagramEvent {
   igId            String    @db.VarChar(255) @id
   title           String    @db.VarChar(255)
-  start           DateTime  DateTime
-  end             DateTime  DateTime
+  start           DateTime
+  end             DateTime
   url             String    @db.VarChar(255)
   organizer       InstagramEventOrganizer @relation(fields: [organizerId], references: [id])
   organizerId     Int
