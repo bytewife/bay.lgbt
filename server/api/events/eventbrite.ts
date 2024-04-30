@@ -27,6 +27,7 @@ async function fetchEventbriteEvents() {
 	try {
 		eventbriteSources = await Promise.all(
 			eventSourcesJSON.eventbriteAccounts.map(async (source) => {
+				console.log('Fetching Eventbrite events from', source.url);
 				return await fetch(source.url, { headers: serverFetchHeaders })
 					// Error check.
 					.then(res => {
@@ -41,12 +42,16 @@ async function fetchEventbriteEvents() {
 					})
 					.then(res => res.text())
 					.then(async html => {
+						// const dom = new JSDOM(html);
+						// const eventsRaw = JSON.parse(dom.window.document.querySelectorAll('script[type="application/ld+json"]')[1].innerHTML)
+						// 	.map(event => convertSchemaDotOrgEventToFullCalendarEvent(event, source.name));
 						const dom = new JSDOM(html);
-						const eventsRaw = JSON.parse(dom.window.document.querySelectorAll('script[type="application/ld+json"]')[1].innerHTML)
-							.map(event => convertSchemaDotOrgEventToFullCalendarEvent(event, source.name));
+						const eventsJson = JSON.parse(dom.window.document.querySelectorAll('script[type="application/ld+json"]')[1].innerHTML);
+						console.log(`eventsJson for url ${source.url}:`, eventsJson);
+						const eventsFC = eventsJson.map(event => convertSchemaDotOrgEventToFullCalendarEvent(event, source.name));
 
 						// Since public & private Eventbrite endpoints provides a series of events as a single event, we need to split them up using their API.
-						const events = Promise.all(eventsRaw.map(async (rawEvent) => {
+						const events = Promise.all(eventsFC.map(async (rawEvent) => {
 							const isLongerThan3Days = (rawEvent.end.getTime() - rawEvent.start.getTime()) / (1000 * 3600 * 24) > 3;
 							if (isLongerThan3Days) {
 								const eventSeries = await getEventSeries(rawEvent.url);

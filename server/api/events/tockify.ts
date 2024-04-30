@@ -23,6 +23,7 @@ async function fetchTockifyEvents() {
 				const url = new URL(source.url);
 				// Add current date in milliseconds to the URL to get events starting from this moment.
 				url.searchParams.append('startms', Date.now().toString());
+				console.log('Fetching Tockify events from', url.href);
 				const res = await fetch(url, { headers: serverFetchHeaders });
 				if (!res.ok) {
 					console.error(`Error fetching Tockify events for ${source.name}: ${res.status} ${res.statusText}`);
