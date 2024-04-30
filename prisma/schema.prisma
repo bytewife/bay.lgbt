@@ -6,9 +6,9 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
-  relationMode = "prisma"
+  provider = "postgresql"
+  url      = env("DATABASE_PRISMA_URL")
+  directUrl = env("DATABASE_URL_NON_POOLING")
 }
 
 model InstagramEventOrganizer {
@@ -25,8 +25,8 @@ model InstagramEventOrganizer {
 model InstagramEvent {
   igId            String    @db.VarChar(255) @id
   title           String    @db.VarChar(255)
-  start           DateTime  @db.DateTime
-  end             DateTime  @db.DateTime
+  start           DateTime  DateTime
+  end             DateTime  DateTime
   url             String    @db.VarChar(255)
   organizer       InstagramEventOrganizer @relation(fields: [organizerId], references: [id])
   organizerId     Int
